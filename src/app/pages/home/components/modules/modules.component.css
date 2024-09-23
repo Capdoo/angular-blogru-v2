@@ -1,0 +1,61 @@
+.main-container {
+  background-color: white;
+  height: auto;
+}
+
+h2{
+  font-size: 35px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+h3 {
+
+}
+
+.title-container {
+  text-align: center;
+}
+
+.title-container {
+  /* width: 350px; */
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  color: white;
+  background-color: #0032fa;
+  border-color: #0032fa;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.content-container {
+  /* width: 350px; */
+
+  color: black;
+  border-radius: 0px 0px 5px 5px;
+  border: solid 1px;
+  border-color: #d3d3d3;
+
+  height: auto;
+
+  padding: 30px;
+}
+
+p{
+  font-size: 17px;
+}
+
+.element-container {
+  /* width: 400px; */
+  padding: 40px;
+}
+
+.btn-vermas{
+  color: white;
+  background-color: #0032fa;
+  border-color: #0032fa;
+}
+

@@ -1,0 +1,40 @@
+.btnLogin {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.btnLogout {
+  margin-left: 15px;
+}
+
+.secuRow {
+  height: 220px;
+
+}
+
+.group {
+  margin-top: 10px;
+}
+
+mat-toolbar {
+  /* height: 200px; */
+  /* background-color: #02a133; */
+  /* background-color: wheat; */
+  background-color: #fcfcfc;
+  /* border-bottom: 1px solid #767676; */
+  border-bottom: 2px solid #bab8b8;
+  /* height: 100px; */
+}
+
+mat-toolbar-row {
+  justify-content: space-between;
+}
+
+.full-list-options {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.btnLogout{
+  background-color: #a0a0a0;
+}

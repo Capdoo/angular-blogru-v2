@@ -3,8 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
 import { MenuManageComponent } from './menu-manage/menu-manage.component';
-
-
+import { MaterialModule } from '../shared/material.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +12,11 @@ import { MenuManageComponent } from './menu-manage/menu-manage.component';
     MenuManageComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MaterialModule
+  ],
+  exports: [
+    MenuComponent,
   ]
 })
 export class CoreModule { }

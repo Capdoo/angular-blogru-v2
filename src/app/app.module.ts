@@ -8,18 +8,34 @@ import { FullComponent } from './layouts/full/full.component';
 import { BlankComponent } from './layouts/blank/blank.component';
 import { CoreModule } from './core/core.module';
 import { HomeModule } from './pages/home/home.module';
+import { AuthRoutingModule } from './pages/auth/auth-routing.module';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { ManageComponent } from './layouts/manage/manage.component';
+import { DashboardModule } from './pages/dashboard/dashboard.module';
+import { MaterialModule } from './shared/material.module';
+import { MenuListItemsComponent } from './layouts/components/menu-list-items/menu-list-items.component';
+import { TableComponent } from './layouts/components/table/table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FullComponent,
-    BlankComponent
+    BlankComponent,
+    ManageComponent,
+    MenuListItemsComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AuthRoutingModule,
     CoreModule,
-    HomeModule
+    HomeModule,
+    RouterModule,
+    HttpClientModule,
+    DashboardModule,
+    MaterialModule
   ],
   providers: [
     provideAnimationsAsync()

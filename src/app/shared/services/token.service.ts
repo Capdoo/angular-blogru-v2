@@ -39,6 +39,15 @@ export class TokenService {
     return username;
   }
 
+  public getUsernameV2(): string | null{
+    if (!this.isLogged()) return null;
+    const payload = this.getToken()!.split('.')[1];
+    const payload_decoded = atob(payload!);
+    const values = JSON.parse(payload_decoded);
+    const username = values.username;
+    return username;
+  }
+
   public isAdmin(): boolean{
     if (!this.isLogged()) return false;
     const payload = this.getToken()?.split('.')[1];

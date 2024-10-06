@@ -1,0 +1,30 @@
+.manage-container {
+  /* background-color: #5e9dff; */
+  /* background-color: #296cd4; */
+  height: calc(100vh - 64px);
+}
+
+@media screen and (max-width: 599px) {
+  .manage-container {
+    height: calc(100vh - 56px);
+  }
+}
+
+mat-drawer {
+  width: 318px;
+  /* justify-content: space-between; */
+
+}
+
+mat-sidenav {
+  width: 200px;
+}
+
+.user {
+  border-radius: 50%;
+}
+
+.last {
+  margin-top: auto; /* Mueve este item al final del contenedor */
+}
+

@@ -1,0 +1,17 @@
+h1{
+  font-size: 60px;
+  color: #7f7f7f;
+  line-height: 1.2;
+}
+
+mat-card {
+  /* margin: 1rem; */
+  margin: 2rem;
+  /* margin: 40px; */
+  width: 80%;
+}
+
+img {
+  height: 260px;
+  object-fit: cover;
+}

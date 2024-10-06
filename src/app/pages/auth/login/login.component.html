@@ -1,1 +1,47 @@
-<p>login works!</p>
+<div class="login-container flex justify-content-center" style="border: none;">
+  <div class="contenido xl:px-8 flex justify-content-center align-items-start mt-4 "
+    style="border: none; width: 90%; height: auto;">
+
+    <div class="login-card">
+      <mat-card appearance="outlined" class="px-2">
+
+        <mat-card-header>
+          <mat-card-title class=" mt-2">Login</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="mb-3">
+
+          <form action="" [formGroup]="loginGroup">
+
+            <mat-form-field floatLabel="always" class="example-full-width mt-4" style="width: 100%;">
+              <mat-label>Usuario</mat-label>
+              <input matInput formControlName="loginUsuario" [maxlength]="30">
+              @if (loginGroup.get('loginUsuario').hasError('required')) {
+              <mat-error>Usuario is <strong>required</strong></mat-error>
+              }
+            </mat-form-field>
+
+            <mat-form-field floatLabel="always" class="example-full-width mt-2" style="width: 100%;">
+              <mat-label>Contraseña</mat-label>
+              <input matInput formControlName="loginContrasena" type="password" [maxlength]="30">
+              @if (loginGroup.get('loginContrasena').hasError('required')) {
+              <mat-error>Contraseña is <strong>required</strong></mat-error>
+              }
+            </mat-form-field>
+
+            <!-- <button class="mt-2" mat-button (click)="submit()">Ingresar</button> -->
+            <button class="mt-2" (click)="submit()">Ingresar</button>
+
+          </form>
+
+
+        </mat-card-content>
+
+        <!-- <mat-card-actions class=" mb-3 ml-2 mr-2" style="width: 100%; border: double;">
+        </mat-card-actions> -->
+
+      </mat-card>
+    </div>
+
+
+  </div>
+</div>

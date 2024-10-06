@@ -4,6 +4,7 @@ import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
 import { MenuManageComponent } from './menu-manage/menu-manage.component';
 import { MaterialModule } from '../shared/material.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -13,10 +14,13 @@ import { MaterialModule } from '../shared/material.module';
   ],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    RouterModule
   ],
   exports: [
     MenuComponent,
+    MenuManageComponent,
+    FooterComponent
   ]
 })
 export class CoreModule { }

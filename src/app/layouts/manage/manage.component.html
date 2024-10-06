@@ -1,0 +1,47 @@
+<app-menu-manage></app-menu-manage>
+
+<div class="manage-container " style="border: none;">
+
+  <mat-drawer-container autosize style="height: 100%; width: 100%;">
+
+    <mat-drawer #drawer [opened]="flagSideNav" mode="side" class="flex flex-column align-content-between"
+      style="border: none;">
+
+      <div  style="border: none;">
+
+        <div class="mt-3 flex justify-content-center align-items-center" style="border: none;">
+          <div class="flex align-items-center justify-content-center" style="border: none;">
+            <img class="img-fluid user" src="assets/user.jpg" alt=""
+              style="height: auto; width: 150px;border: none;" max-width="100%">
+          </div>
+        </div>
+
+        <div class="mt-3 flex justify-content-center">
+          <div>
+            <p>{{username}}</p>
+          </div>
+        </div>
+
+        <mat-nav-list class="flex flex-column">
+          <app-menu-list-items *ngFor="let item of navItems" [item]="item"></app-menu-list-items>
+
+          <mat-list-item (click)="onCerrarSesion()" class="menu-list-item " style="border: none;">
+            <mat-icon matListItemIcon class="routeIcon flex align-items-center" style="border: none; height: 100%;">
+              logout
+            </mat-icon>
+            Cerrar Sesión
+            <span>
+            </span>
+          </mat-list-item>
+        </mat-nav-list>
+      </div>
+    </mat-drawer>
+
+    <mat-drawer-content style="height: 100%;">
+      <div class="content">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+
+</div>

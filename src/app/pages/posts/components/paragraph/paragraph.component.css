@@ -1,0 +1,19 @@
+.btnDeleteParagraph {
+  height: 35px;
+  /* width: 200px; */
+
+  border-radius: 10px;
+  border-color: var(--cf-color-delete);
+  /* background-color: var(--cf-color-delete); */
+  border: 1px;
+
+  color: var(--cf-color-delete-text);
+
+  /* color: var(--cf-color-primary) !important; */
+}
+
+.btnDeleteParagraph:hover {
+  color: white;
+  border-color: var(--cf-color-delete);
+  background-color: var(--cf-color-delete);
+}

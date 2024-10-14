@@ -1,0 +1,18 @@
+.btnAddParagraph {
+  height: 35px;
+  /* width: 200px; */
+
+  border-radius: 10px;
+  border-color: var(--cf-color-primary);
+  background-color: var(--cf-color-primary);
+  border: 1px;
+
+  color: white;
+
+  /* color: var(--cf-color-primary) !important; */
+}
+
+.btnAddParagraph:hover {
+  border-color: var(--cf-color-secondary);
+  background-color: var(--cf-color-secondary);
+}

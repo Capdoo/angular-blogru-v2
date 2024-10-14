@@ -16,6 +16,8 @@ import { DashboardModule } from './pages/dashboard/dashboard.module';
 import { MaterialModule } from './shared/material.module';
 import { MenuListItemsComponent } from './layouts/components/menu-list-items/menu-list-items.component';
 import { TableComponent } from './layouts/components/table/table.component';
+import { interceptorProvicer } from './interceptor/resource-interceptor.service';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -35,10 +37,12 @@ import { TableComponent } from './layouts/components/table/table.component';
     RouterModule,
     HttpClientModule,
     DashboardModule,
-    MaterialModule
+    MaterialModule,
+    NgxSpinnerModule
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    interceptorProvicer
   ],
   bootstrap: [AppComponent]
 })

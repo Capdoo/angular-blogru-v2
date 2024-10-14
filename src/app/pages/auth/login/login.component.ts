@@ -52,6 +52,7 @@ export class LoginComponent {
         data => {
 
           this.tokenService.setToken(data.accessToken);
+          this.tokenService.setRefreshToken(data.refreshToken);
           this.eventService.flagLogged.emit(true);
 
           console.log(data);

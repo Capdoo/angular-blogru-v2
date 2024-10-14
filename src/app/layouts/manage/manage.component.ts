@@ -28,34 +28,20 @@ export class ManageComponent implements OnInit{
         {
           displayName: 'Nuevo post',
           iconName: 'post_add',
-          route: 'dashboard/pets/new-pet'
+          route: 'dashboard/posts/redact'
         },
+        // {
+        //   displayName: 'Nuevo post',
+        //   iconName: 'post_add',
+        //   route: 'dashboard/posts/new-post'
+        // },
         {
           displayName: 'Mis posts',
-          // iconName: 'bookmark_heart',
           iconName: 'view_list',
-          route: 'dashboard/pets/my-pets'
+          route: 'dashboard/posts/my-posts'
         },
       ]
-    },
-    // {
-    //   displayName: 'Adopciones',
-    //   iconName: 'dashboard',
-    //   route: '',
-    //   children: [
-    //     {
-    //       displayName: 'Nueva adopción',
-    //       iconName: 'add',
-    //       route: 'dashboard/adoptions/new-adoption'
-    //     },
-    //     {
-    //       displayName: 'Mis adopciones',
-    //       iconName: 'dashboard',
-    //       route: 'dashboard/adoptions/my-adoptions'
-    //     },
-    //   ]
-    // },
-
+    }
   ]
 
   constructor(private eventService: EventService,

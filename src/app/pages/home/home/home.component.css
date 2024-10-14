@@ -46,8 +46,12 @@ input {
 .btn-email {
   height: 40px;
   width: 150px;
-  background-color: #0032fa;
-  border-color: #0032fa;
+
+  background-color: var(--cf-color-primary);
+  border-color: var(--cf-color-primary);
+  border: 1px;
+
+
   color: white;
 
   border-radius: 0px 5px 5px 0px;

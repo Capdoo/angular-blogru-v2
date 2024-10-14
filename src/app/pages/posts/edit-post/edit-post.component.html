@@ -3,7 +3,7 @@
   <div class="contenido align-items-center mt-4 " style="border: none; width: 95%; height: auto;">
 
     <div class="flex justify-content-start align-items-end" style="border: none; ; height: auto;">
-      <h1>Nuevo Post</h1>
+      <h1>Editar Post</h1>
     </div>
   </div>
 </div>
@@ -12,7 +12,7 @@
 <div class="mt-4 my-pets-container flex justify-content-center" style="border: none;">
   <div class="align-items-center" style="border: none; width: 95%; height: auto;">
 
-    <form [formGroup]="createPostFormGroup">
+    <form [formGroup]="editPostFormGroup">
 
       <div>
         <mat-card appearance="outlined">
@@ -22,7 +22,7 @@
           <mat-card-content>
             <mat-form-field floatLabel="always" style="width: 100%;">
               <mat-label>Nombre</mat-label>
-              <input matInput formControlName="createPostTitle" type="text" [maxLength]="30"
+              <input matInput formControlName="editPostTitle" type="text" [maxLength]="30"
                 placeholder="Ejemplo de titulo">
             </mat-form-field>
           </mat-card-content>
@@ -37,7 +37,8 @@
 
           <mat-card-content>
             <mat-form-field style="width: 100%;">
-              <textarea matInput formControlName="createPostResume" name="" id="" placeholder="Ejemplo de resumen"></textarea>
+              <textarea matInput formControlName="editPostResume" name="" id=""
+                placeholder="Ejemplo de resumen"></textarea>
             </mat-form-field>
           </mat-card-content>
         </mat-card>
@@ -52,16 +53,15 @@
           <mat-card-content class="grid" style="border: none;">
             <mat-form-field floatLabel="always" class="col-12 col-md-6">
               <mat-label>Tema</mat-label>
-              <mat-select formControlName="createPostTopic" [errorStateMatcher]="matcher">
+              <mat-select formControlName="editPostTopic" [errorStateMatcher]="matcher">
                 <mat-option *ngFor="let item of listTopics" [value]="item.id">{{item.description}}</mat-option>
               </mat-select>
             </mat-form-field>
 
             <mat-form-field floatLabel="always" class="col-12 col-md-6">
               <mat-label>Categoria</mat-label>
-              <mat-select formControlName="createPostCategory" [errorStateMatcher]="matcher">
-                <mat-option *ngFor="let item of listSubtopics"
-                  [value]="item.id">{{item.description}}</mat-option>
+              <mat-select formControlName="editPostCategory" [errorStateMatcher]="matcher">
+                <mat-option *ngFor="let item of listSubtopics" [value]="item.id">{{item.description}}</mat-option>
               </mat-select>
             </mat-form-field>
           </mat-card-content>
@@ -76,21 +76,16 @@
           </mat-card-header>
 
           <mat-card-content>
-            <div class="flex justify-content-end my-3" style="width: 100%; border: none;">
-              <!-- <button class="flex align-items-center btnAddSection" (click)="addSection()">
-                <mat-icon class="mr-2">add_circle</mat-icon>
-                Agregar seccion
-              </button> -->
-
+            <!-- <div class="flex justify-content-end my-3" style="width: 100%; border: none;">
               <a class="flex align-items-center btnAddSectionV2" (click)="addSection()">
                 <mat-icon class="mr-2">add_circle</mat-icon>
                 Agregar seccion
               </a>
-            </div>
+            </div> -->
 
-            <div *ngFor="let section of listSections">
+            <!-- <div *ngFor="let section of listSections">
               <app-section [section]="section"></app-section>
-            </div>
+            </div> -->
           </mat-card-content>
         </mat-card>
       </div>
@@ -105,8 +100,7 @@
         </div>
 
         <div>
-          <button class="pr-2 flex align-items-center btnAddSection" (click)="savePost()"
-          [disabled]="flagActivateSave">
+          <button class="pr-2 flex align-items-center btnAddSection" (click)="updatePost()" [disabled]="flagActivateUpdate">
             <mat-icon class="mr-2">save</mat-icon>
             Guardar
           </button>
@@ -114,12 +108,7 @@
       </div>
     </form>
 
-    <div class="mt-7">
-      <pre>
-        {{post | json}}
-      </pre>
-    </div>
+
 
   </div>
 </div>
-

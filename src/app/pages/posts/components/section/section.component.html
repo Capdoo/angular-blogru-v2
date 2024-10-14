@@ -1,0 +1,45 @@
+<mat-accordion>
+
+  <form action="" [formGroup]="createSectionFormGroup">
+    <mat-expansion-panel hideToggle [expanded]="true" class="mb-4">
+      <mat-expansion-panel-header>
+        <mat-panel-title> {{createSectionFormGroup.get('createSectionSubtitle').value ? createSectionFormGroup.get('createSectionSubtitle').value : 'Nueva seccion'}} </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <div>
+        <mat-card-title class="mt-4">Subtitulo</mat-card-title>
+        <mat-form-field style="width: 100%;">
+          <input matInput formControlName="createSectionSubtitle" type="text" [maxLength]="30"
+            placeholder="Nombre del subtitulo">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-card-title class="mt-4">Parrafos</mat-card-title>
+
+        <div class="flex justify-content-end my-3" style="width: 100%; border: none;">
+          <button class="flex align-items-center btnAddParagraph" (click)="addParagraph()">
+            <mat-icon class="mr-2">add_circle</mat-icon>
+            Agregar parrafo
+          </button>
+        </div>
+
+
+        <div *ngFor="let paragraph of section.listParagraphsDto">
+          <app-paragraph [paragraph]="paragraph"></app-paragraph>
+        </div>
+
+
+        <button (click)="verSeccion()">
+          #dev# Ver Seccion
+        </button>
+
+      </div>
+
+    </mat-expansion-panel>
+
+
+  </form>
+
+
+</mat-accordion>

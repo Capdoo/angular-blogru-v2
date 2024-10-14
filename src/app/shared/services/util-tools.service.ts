@@ -25,7 +25,7 @@ export class UtilToolsService {
       text: "You won't be able to revert this!",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
+      confirmButtonColor: "#009788",
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {
@@ -45,7 +45,7 @@ export class UtilToolsService {
       text: message,
       icon: "success",
       // showCancelButton: true,
-      confirmButtonColor: "#3085d6",
+      confirmButtonColor: "#009788",
       // cancelButtonColor: "#d33",
       confirmButtonText: "Aceptar"
     }).then((result) => {
@@ -65,7 +65,7 @@ export class UtilToolsService {
       text: message,
       icon: "error",
       // showCancelButton: true,
-      confirmButtonColor: "#3085d6",
+      confirmButtonColor: "#009788",
       // cancelButtonColor: "#d33",
       confirmButtonText: "Aceptar"
     }).then((result) => {
@@ -85,7 +85,7 @@ export class UtilToolsService {
       text: message,
       icon: "info",
       // showCancelButton: true,
-      confirmButtonColor: "#3085d6",
+      confirmButtonColor: "#009788",
       // cancelButtonColor: "#d33",
       confirmButtonText: "Aceptar"
     }).then((result) => {
@@ -121,7 +121,7 @@ export class UtilToolsService {
       text: '¿Está seguro(a)?',
       icon: "info",
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
+      confirmButtonColor: "#009788",
       cancelButtonColor: "#d33",
       confirmButtonText: "Aceptar",
       cancelButtonText: "Cancelar"

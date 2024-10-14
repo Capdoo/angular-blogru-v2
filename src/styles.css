@@ -7,3 +7,62 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+:root {
+  /* --cf-color-primary: #E56A54; */
+  /* --cf-color-primary: #0032fa; */
+  --cf-color-primary: #009788;
+
+
+  --cf-color-secondary: #03b3a1;
+
+  --cf-color-delete: #e04c4c;
+  /* --cf-color-delete: #e04c4c; */
+  --cf-color-delete-text: #e04c4c;
+
+
+  
+  --cf-color-delete-secondary: #df1111;
+
+}
+
+.mdc-list-item--with-leading-icon .mdc-list-item__start {
+  color: var(--cf-color-primary) !important;
+}
+
+.mdc-list-item.mdc-list-item--with-trailing-meta .mdc-list-item__end {
+  color: var(--cf-color-primary) !important;
+
+}
+
+.mdc-list-item__primary-text {
+  color: var(--cf-color-primary) !important;
+
+}
+
+.mat-drawer-content {
+  /* overflow: hidden !important; */
+}
+
+.mat-mdc-header-row {
+  background-color: var(--cf-color-primary) !important;
+  color: white !important;
+}
+
+.mat-expansion-panel-header {
+  background-color: var(--cf-color-primary) !important;
+  color: white !important;
+}
+
+mat-expansion-panel-header > span.mat-content > mat-panel-title {
+  color: white !important;
+}
+
+mat-expansion-panel-header > span.mat-expansion-indicator.ng-trigger.ng-trigger-indicatorRotate {
+  color: white !important;
+}
+
+.mat-expansion-indicator {
+  /* color: white !important; */
+  /* background-color: red; */
+
+}

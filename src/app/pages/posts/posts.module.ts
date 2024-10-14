@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MyPostsComponent } from './my-posts/my-posts.component';
-import { NewPostComponent } from './new-post/new-post.component';
 import { PostsRoutingModule } from './posts-routing.module';
+import { ManageComponent } from './manage/manage.component';
+import { RedactComponent } from './redact/redact.component';
 
 @NgModule({
   declarations: [
+  
   ],
   imports: [
     CommonModule,

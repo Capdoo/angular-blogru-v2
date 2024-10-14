@@ -1,6 +1,7 @@
 mat-toolbar {
   /* height: 200px; */
-  background-color: #5e8f61;
+  /* background-color: #5e8f61; */
+  background-color: var(--cf-color-primary);
 }
 
 mat-toolbar-row {

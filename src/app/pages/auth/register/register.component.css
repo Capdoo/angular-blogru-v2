@@ -35,8 +35,8 @@ mat-card {
 
 button {
   color: white !important;
-  background-color: #3b88ff;
-  border-color: #3b88ff;
+  background-color: var(--cf-color-primary);
+  border-color:  var(--cf-color-primary);
   border: 1px;
   border-radius: 15px;
   width: 100%;
@@ -44,7 +44,7 @@ button {
 }
 
 button:hover {
-  background-color: #1270fd;
+  background-color: var(--cf-color-secondary)
 }
 
 mat-card{

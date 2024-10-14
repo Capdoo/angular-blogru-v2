@@ -22,8 +22,11 @@ h2{
 
 
   color: white;
-  background-color: #0032fa;
-  border-color: #0032fa;
+  
+  background-color: var(--cf-color-primary);
+  border-color: var(--cf-color-primary);
+
+
   border-radius: 5px 5px 0px 0px;
 }
 
@@ -59,8 +62,9 @@ p{
   width: 75px;
   height: 30px;
   color: white;
-  background-color: #0032fa;
-  border-color: #0032fa;
+  background-color: var(--cf-color-primary);
+  border-color: var(--cf-color-primary);
+  border: 1px;
   border-radius: 10px;
 }
 

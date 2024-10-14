@@ -1,0 +1,11 @@
+mat-icon {
+  /* color: var(); */
+  color: var(--cf-color-primary);
+}
+
+
+
+mat-list-item {
+  color: var(--cf-color-primary) !important;
+
+}

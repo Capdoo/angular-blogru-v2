@@ -18,4 +18,9 @@ export class CategoriesService {
     return this.httpClient.get<SubtopicDto[]>(url);
   }
 
+  public getCategoriesByTopic(topicId: string): Observable<SubtopicDto[]> {
+    const url = `${this.url}/api/subtopics/read/topic/${topicId}`;
+    return this.httpClient.get<SubtopicDto[]>(url);
+  }
+
 }

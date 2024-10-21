@@ -1,20 +1,36 @@
 <form action="" [formGroup]="createParagraphFormGroup">
 
+  <div class="flex justify-content-end" style="border: none;">
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="deleteParagraph()"> 
+        <mat-icon>delete</mat-icon>
+        <span>Eliminar parrafo</span>
+      </button>
+      <button mat-menu-item disabled>
+        <mat-icon>settings</mat-icon>
+        <span>Opciones avanzadas</span>
+      </button>
+    </mat-menu>
+  </div>
+
   <mat-form-field style="width: 100%;">
-    <textarea matInput name="" id="" formControlName="createParagraphContent" placeholder="Contenido del parrafo" cdkTextareaAutosize cdkAutosizeMinRows="5"
-      cdkAutosizeMaxRows="300"></textarea>
+
+    <textarea matInput name="" id="" formControlName="createParagraphContent" placeholder="Contenido del parrafo"
+      cdkTextareaAutosize cdkAutosizeMinRows="5" cdkAutosizeMaxRows="300"></textarea>
   </mat-form-field>
-  
-  <div class="flex justify-content-end mb-4" style="width: 100%; border: none;">
+
+  <!-- <div class="flex justify-content-end mb-4" style="width: 100%; border: none;">
     <button class="flex align-items-center btnDeleteParagraph" (click)="deleteParagraph()">
       <mat-icon class="mr-2">delete</mat-icon>
       Eliminar
     </button>
-  </div>
-  
-  <button (click)="verParrafo()">
+  </div> -->
+
+  <!-- <button (click)="verParrafo()">
     #dev# Ver Parrafo
-  </button>
+  </button> -->
 
 </form>
-

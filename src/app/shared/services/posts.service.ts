@@ -12,6 +12,11 @@ export class PostsService {
 
   constructor(private httpClient: HttpClient) { }
 
+  public getPosts(): Observable<PostDto[]> {
+    const url = `${this.url}/api/posts/read`;
+    return this.httpClient.get<PostDto[]>(url);
+  }
+
   public getPostsByUser(): Observable<PostDto[]> {
     const url = `${this.url}/api/posts/read/user`;
 

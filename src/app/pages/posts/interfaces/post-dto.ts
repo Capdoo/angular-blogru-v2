@@ -9,6 +9,7 @@ export interface PostDto {
   userId:          string;
   register_date:   string;
   listSectionsDto: SectionDto[];
+  userDto: UserDto
 }
 
 export interface SectionDto {
@@ -33,10 +34,17 @@ export interface ParagraphDto {
 
 export interface TopicDto {
   id:          string;
+  name:        string;
   description: string;
 }
 
 export interface SubtopicDto {
   id:          string;
+  name:        string;
   description: string;
+}
+
+export interface UserDto {
+  firstName:  string;
+  lastName:   string;
 }

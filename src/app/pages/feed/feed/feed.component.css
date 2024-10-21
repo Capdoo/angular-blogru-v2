@@ -1,0 +1,50 @@
+.main-container {
+  /* background-color: #abb8c3; */
+  /* background-color: rgba(231, 228, 228, 0.85); */
+  background-color: #f6f9ff;
+
+  height: auto;
+  padding-bottom: 60px;
+}
+
+.posts-container {
+  background-color: #f6f9ff;
+
+}
+
+
+.title-container {
+  margin-top: 150px;
+  /* text-align: center; */
+  color: black;
+
+}
+
+
+mat-card {
+  border-radius: 15px;
+  padding: 15px;
+  height: auto;
+}
+
+
+.btn-feed {
+  height: 35px;
+  width: 90px;
+
+  background-color: var(--cf-color-primary);
+  border-color: var(--cf-color-primary);
+  border: 1px;
+
+
+  color: white;
+
+  /* border-radius: 0px 15px 5px 0px; */
+  border-radius: 10px;
+
+}
+
+.btn-feed:not(:disabled):hover {
+  border-color: var(--cf-color-secondary);
+  background-color: var(--cf-color-secondary);
+}

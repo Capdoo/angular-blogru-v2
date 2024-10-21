@@ -77,3 +77,10 @@ input {
   border-color: var(--cf-color-secondary);
   background-color: var(--cf-color-secondary);
 }
+
+.option-image {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  vertical-align: middle;
+}

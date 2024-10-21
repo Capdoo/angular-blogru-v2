@@ -2,7 +2,7 @@ export const environment = {
   production: true,
   
   // urlAddress: 'https://prod.sample.com/gateway',
-  urlAddress: 'https://spring-blogru-backend-51b6c657783b.herokuapp.com',
+  urlAddress: 'https://spring-blogru2-backend-dc63afd00a04.herokuapp.com',
   version: 'V0.0.1',
-  appCode: 'PTTAPP-01'
+  appCode: 'BLOGRUAPP-01'
 };

@@ -3,7 +3,8 @@
   <form action="" [formGroup]="createSectionFormGroup">
     <mat-expansion-panel hideToggle [expanded]="true" class="mb-4">
       <mat-expansion-panel-header>
-        <mat-panel-title> {{createSectionFormGroup.get('createSectionSubtitle').value ? createSectionFormGroup.get('createSectionSubtitle').value : 'Nueva seccion'}} </mat-panel-title>
+        <mat-panel-title> {{createSectionFormGroup.get('createSectionSubtitle').value ?
+          createSectionFormGroup.get('createSectionSubtitle').value : 'Nueva seccion'}} </mat-panel-title>
       </mat-expansion-panel-header>
 
       <div>
@@ -25,15 +26,17 @@
         </div>
 
 
-        <div *ngFor="let paragraph of section.listParagraphsDto">
-          <app-paragraph [paragraph]="paragraph"></app-paragraph>
+        <div *ngFor="let paragraph of section.listParagraphsDto; let i = index">
+          <app-paragraph [paragraph]="paragraph" [index]="i"
+            (listenerCambios)="eliminarParrafo($event)"></app-paragraph>
         </div>
 
+      </div>
 
-        <button (click)="verSeccion()">
-          #dev# Ver Seccion
+      <div class="my-4 flex justify-content-end">
+        <button mat-fab (click)="deleteSection($event)">
+          <mat-icon>delete</mat-icon>
         </button>
-
       </div>
 
     </mat-expansion-panel>

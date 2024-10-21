@@ -1,4 +1,4 @@
-import { Component, OnInit, signal, ChangeDetectionStrategy  } from '@angular/core';
+import { Component, OnInit, signal, ChangeDetectionStrategy, inject } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { PostsService } from '../../../shared/services/posts.service';
 import { UtilToolsService } from '../../../shared/services/util-tools.service';
@@ -9,6 +9,8 @@ import { ErrorStateMatcher } from '@angular/material/core';
 import { TopicsService } from '../../../shared/services/topics.service';
 import { CategoriesService } from '../../../shared/services/categories.service';
 import { DataService } from '../../../shared/services/data.service';
+import { MatDialog } from '@angular/material/dialog';
+import { PreviewComponent } from '../components/preview/preview.component';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -40,6 +42,9 @@ export class RedactComponent implements OnInit {
 
   flagCreate: boolean = false;
 
+  readonly dialog = inject(MatDialog);
+
+
   constructor(private _formBuilder: FormBuilder,
     private postsService: PostsService,
     private utilToolsService: UtilToolsService,
@@ -51,19 +56,6 @@ export class RedactComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // this.utilToolsService.Timer();
-
-    //TO-DO
-    //Continuar aqui, como seria el manejo delos form controls para que
-    //se maneje en creacion y enedicion
-    //pasar lo de creacion aqui
-
-    //y luego ver edicion
-    //eliminacion de parafors
-    //eliminacio nde secciones
-
-    //previsualizar
-    //listar publicaciones en feed
 
 
 
@@ -71,6 +63,12 @@ export class RedactComponent implements OnInit {
     this.topicService.getAllTopics().subscribe(
       data => {
         this.listTopics = data;
+
+        this.listTopics = this.listTopics.map( (e) => {
+          e.description = `assets/${e.description}.png`
+          return e;
+        })
+
         this.utilToolsService.CloseTimer();
       },
       err => {
@@ -94,6 +92,8 @@ export class RedactComponent implements OnInit {
         console.error(err);
       }
     );
+    this.utilToolsService.CloseTimer();
+
 
     console.log(this.flagCreate);
 
@@ -130,9 +130,9 @@ export class RedactComponent implements OnInit {
         redactPostListSections: [this.post.listSectionsDto,],
       });
 
-      
+
       setTimeout(() => {
-        
+
         console.log("Delayed for 1 second.");
         this.redactPostFormGroup.get('redactPostTopic').setValue(this.post.topicId);
         this.redactPostFormGroup.get('redactPostCategory').setValue(this.post.subtopicId);
@@ -145,8 +145,54 @@ export class RedactComponent implements OnInit {
 
     }
 
+    //flujo create
+    if (!this.isValidForm()) {
+      this.redactPostFormGroup.get('redactPostCategory').disable();
+    } else {
+      this.selectTopic();
+    }
+
 
   }
+
+  selectTopic(): void {
+    
+    let topicId = this.redactPostFormGroup.get('redactPostTopic').value;
+    console.log(topicId);
+    
+    this.utilToolsService.Timer();
+    this.categoriesService.getCategoriesByTopic(topicId).subscribe(
+      data => {
+        this.listSubtopics = data;
+        
+        this.listSubtopics = this.listSubtopics.map( (e) => {
+          e.description = `assets/${e.description}.png`
+          return e;
+        })
+
+        if (this.listSubtopics.length > 0) {
+          this.redactPostFormGroup.get('redactPostCategory').enable();
+        } else {
+          this.utilToolsService.errNotif('Crear/Editar Post', 'Ocurrió un error');
+        }
+        this.utilToolsService.CloseTimer();
+      },
+      err => {
+
+        this.utilToolsService.errNotif('Crear/Editar Post', 'Ocurrió un error');
+        console.error(err);
+      }
+    )
+  }
+
+  // updateImageSource(subtopicDto: SubtopicDto[]): SubtopicDto[] {
+  //   let resSubtopicDto: SubtopicDto[];
+
+
+
+
+  //   return resSubtopicDto;
+  // }
 
   isValidForm(): boolean {
     let res: boolean = false;
@@ -169,7 +215,18 @@ export class RedactComponent implements OnInit {
   previewPost(): void {
     console.log("Flag Edit")
     this.createRequest();
+
+    const dialogRef = this.dialog.open(PreviewComponent, {
+      data: this.post,
+      width: '90%',
+
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
+
 
   createRequest(): void {
     this.post.title = this.redactPostFormGroup.get('redactPostTitle').value;
@@ -186,7 +243,7 @@ export class RedactComponent implements OnInit {
       //create
       console.log("Start save post");
       this.savePost();
-      
+
     } else {
       //update
       console.log("Start update post");
@@ -198,7 +255,7 @@ export class RedactComponent implements OnInit {
     this.flagActivateSave = true;
     this.redactPostFormGroup.markAllAsTouched();
     console.log("#save# Form valid: " + this.redactPostFormGroup.valid);
-    
+
     if (!this.isValidForm()) {
       this.utilToolsService.errNotif('Nuevo Post', 'Campos incorrectos');
       this.flagActivateSave = false;
@@ -248,6 +305,10 @@ export class RedactComponent implements OnInit {
         console.error(err);
       }
     )
+  }
+
+  eliminarSeccion(event): void {
+    this.listSections.splice(event, 1);
   }
 
 

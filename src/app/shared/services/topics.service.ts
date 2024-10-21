@@ -17,4 +17,6 @@ export class TopicsService {
     const url = `${this.url}/api/topics`;
     return this.httpClient.get<TopicDto[]>(url);
   }
+
+
 }

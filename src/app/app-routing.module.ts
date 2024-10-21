@@ -21,6 +21,10 @@ const routes: Routes = [
         loadChildren: () => import('./pages/auth/auth.module').then(mod => mod.AuthModule),
       },
       {
+        path: 'feed',
+        loadChildren: () => import('./pages/feed/feed.module').then(mod => mod.FeedModule),
+      },
+      {
         path: '',
         redirectTo: 'home',
         pathMatch: 'full'

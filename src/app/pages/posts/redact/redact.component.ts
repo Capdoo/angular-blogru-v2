@@ -130,6 +130,11 @@ export class RedactComponent implements OnInit {
         redactPostListSections: [this.post.listSectionsDto,],
       });
 
+      // let topicDb = this.redactPostFormGroup.get('redactPostTopic').value;
+      this.selectTopic();
+      this.utilToolsService.CloseTimer();
+
+
 
       setTimeout(() => {
 
@@ -149,6 +154,7 @@ export class RedactComponent implements OnInit {
     if (!this.isValidForm()) {
       this.redactPostFormGroup.get('redactPostCategory').disable();
     } else {
+      console.log("Flujo editar")
       this.selectTopic();
     }
 
@@ -290,6 +296,8 @@ export class RedactComponent implements OnInit {
       return;
     }
 
+    this.createRequest();
+    this.utilToolsService.Timer();
     this.postsService.updatePost(this.post).subscribe(
       data => {
         console.log(data);

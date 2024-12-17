@@ -1,0 +1,74 @@
+.btn-volver {
+  height: 35px;
+  width: 90px;
+
+  background-color: var(--cf-color-primary);
+  border-color: var(--cf-color-primary);
+  border: 1px;
+
+  color: white;
+
+  /* border-radius: 0px 15px 5px 0px; */
+  border-radius: 10px;
+  transition: background-color 0.1s ease;
+  transition-delay: 0.1s;
+}
+
+.btn-volver:not(:disabled):hover {
+  border-color: var(--cf-color-secondary);
+  background-color: var(--cf-color-secondary);
+}
+
+.btn-volver:hover {
+  background-color: var(--cf-color-secondary);
+  border-color: var(--cf-color-secondary);
+}
+
+
+.btn-volverV2 {
+  height: 35px;
+  width: 90px;
+
+  border-radius: 10px;
+  border-color: var(--cf-color-primary);
+  /* background-color: var(--cf-color-primary); */
+  border: 1px;
+
+  color: var(--cf-color-primary);
+
+  /* color: var(--cf-color-primary) !important; */
+}
+
+.btn-volverV2:hover {
+  color: white;
+  border-color: var(--cf-color-secondary);
+  background-color: var(--cf-color-secondary);
+}
+
+h1 {
+  font-size: 90px;
+  line-height: 1.2;
+  
+
+}
+
+h2 {
+  font-size: 40px;
+}
+
+p {
+  font-size: 20px;
+  font-weight: 300;
+  /* line-height: 1.2; */
+}
+
+.content-container {
+  border: dotted;
+  margin-top: 50px;
+  width: 100%;
+}
+
+.posts-container {
+  /* padding-bottom: 50px; */
+  background-color: #f6f9ff;
+}

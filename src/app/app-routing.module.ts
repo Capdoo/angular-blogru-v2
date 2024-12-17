@@ -25,6 +25,10 @@ const routes: Routes = [
         loadChildren: () => import('./pages/feed/feed.module').then(mod => mod.FeedModule),
       },
       {
+        path: 'topics',
+        loadChildren: () => import('./pages/topics/topics.module').then(mod => mod.TopicsModule),
+      },
+      {
         path: '',
         redirectTo: 'home',
         pathMatch: 'full'

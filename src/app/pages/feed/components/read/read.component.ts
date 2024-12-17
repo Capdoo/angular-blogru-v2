@@ -13,6 +13,8 @@ export class ReadComponent implements OnInit {
 
   id: string = "";
   public post: PostDto;
+  flagForm: boolean = false;
+
   constructor(private activatedRouted: ActivatedRoute,
     private postService: PostsService,
     private router: Router
@@ -30,12 +32,18 @@ export class ReadComponent implements OnInit {
         }
         console.log('Se obtiene el post a ver detalle');
         this.post = data;
+        this.flagForm = true;
         return 0;
       },
       (err) => {
         console.log(err)
       }
     );
+  }
+
+
+  volver(): void {
+    this.router.navigateByUrl(`/site/feed`);
   }
 
 }

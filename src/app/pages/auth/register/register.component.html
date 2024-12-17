@@ -9,15 +9,13 @@
           <mat-card-title class=" mt-2">Register</mat-card-title>
         </mat-card-header>
 
-
         <mat-card-content class="mt-4 mb-3 grid">
-
           <form action="" [formGroup]="registerGroup">
-
 
             <mat-form-field floatLabel="always" class="example-full-width col-12 col-md-6">
               <mat-label>Apellido Paterno</mat-label>
-              <input matInput formControlName="registerApePaterno" [errorStateMatcher]="matcher" appTextOnly [maxlength]="30">
+              <input matInput formControlName="registerApePaterno" [errorStateMatcher]="matcher" appTextOnly
+                [maxlength]="30">
 
               @if (registerGroup.get('registerApePaterno').hasError('required')) {
               <mat-error>Apellido Paterno is <strong>required</strong></mat-error>
@@ -26,7 +24,8 @@
 
             <mat-form-field floatLabel="always" class="example-full-width col-12 col-md-6">
               <mat-label>Apellido Materno</mat-label>
-              <input matInput formControlName="registerApeMaterno" [errorStateMatcher]="matcher" appTextOnly [maxlength]="30">
+              <input matInput formControlName="registerApeMaterno" [errorStateMatcher]="matcher" appTextOnly
+                [maxlength]="30">
               @if (registerGroup.get('registerApeMaterno').hasError('required')) {
               <mat-error>Apellido Materno is <strong>required</strong></mat-error>
               }
@@ -34,7 +33,8 @@
 
             <mat-form-field floatLabel="always" class="example-full-width  col-12 col-md-6">
               <mat-label>Nombres</mat-label>
-              <input matInput formControlName="registerNombres" [errorStateMatcher]="matcher" appTextOnly [maxlength]="30">
+              <input matInput formControlName="registerNombres" [errorStateMatcher]="matcher" appTextOnly
+                [maxlength]="30">
               @if (registerGroup.get('registerNombres').hasError('required')) {
               <mat-error>Nombres is <strong>required</strong></mat-error>
               }
@@ -56,7 +56,7 @@
             <mat-form-field floatLabel="always" class="example-full-width col-12 col-md-6">
               <mat-label>Contraseña</mat-label>
               <input matInput formControlName="registerContrasena" [errorStateMatcher]="matcher" type="password"
-              [maxlength]="30">
+                [maxlength]="30">
               @if (registerGroup.get('registerContrasena').hasError('required')) {
               <mat-error>Contraseña is <strong>required</strong></mat-error>
               }
@@ -92,17 +92,10 @@
               }
 
             </mat-form-field>
-
             <button class="mt-2" [disabled]="!flagSubmit" (click)="submit()">Registrar</button>
-
           </form>
-
         </mat-card-content>
-
-
       </mat-card>
     </div>
-
-
   </div>
 </div>

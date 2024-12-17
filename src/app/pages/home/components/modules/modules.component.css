@@ -66,6 +66,13 @@ p{
   border-color: var(--cf-color-primary);
   border: 1px;
   border-radius: 10px;
+
+  transition: background-color 0.1s ease;
+  transition-delay: 0.1s;
+}
+
+.btn-vermas:hover{
+  background-color: var(--cf-color-secondary);
 }
 
 h3 {

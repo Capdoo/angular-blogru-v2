@@ -14,7 +14,7 @@ export class TopicsService {
   constructor(private httpClient: HttpClient) { }
 
   public getAllTopics(): Observable<TopicDto[]> {
-    const url = `${this.url}/api/topics`;
+    const url = `${this.url}/api/topics/read`;
     return this.httpClient.get<TopicDto[]>(url);
   }
 

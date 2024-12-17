@@ -23,6 +23,18 @@ export class PostsService {
     return this.httpClient.get<PostDto[]>(url);
   }
 
+  public getPostsByTopicId(topicId: string): Observable<PostDto[]> {
+    const url = `${this.url}/api/posts/read/topic/${topicId}`;
+
+    return this.httpClient.get<PostDto[]>(url);
+  }
+
+  public getPostsBySubTopicId(subTopicId: string): Observable<PostDto[]> {
+    const url = `${this.url}/api/posts/read/subtopic/${subTopicId}`;
+
+    return this.httpClient.get<PostDto[]>(url);
+  }
+
   public deletePost(id: number): Observable<PostDto> {
     const url = `${this.url}/api/posts/delete/${id}`;
     return this.httpClient.delete<PostDto>(url);

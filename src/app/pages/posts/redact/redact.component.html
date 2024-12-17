@@ -24,7 +24,7 @@
           </mat-card-header>
           <mat-card-content>
             <mat-form-field floatLabel="always" style="width: 100%;">
-              <mat-label>Nombre</mat-label>
+              <!-- <mat-label>Nombre</mat-label> -->
               <input matInput formControlName="redactPostTitle" type="text" [maxLength]="30"
                 placeholder="Ejemplo de titulo">
             </mat-form-field>
@@ -41,7 +41,7 @@
           <mat-card-content>
             <mat-form-field style="width: 100%;">
               <textarea matInput formControlName="redactPostResume" name="" id=""
-                placeholder="Ejemplo de resumen"></textarea>
+                placeholder="Ejemplo de resumen" cdkTextareaAutosize cdkAutosizeMinRows="3" cdkAutosizeMaxRows="300"></textarea>
             </mat-form-field>
           </mat-card-content>
         </mat-card>
@@ -98,10 +98,6 @@
 
           <mat-card-content>
             <div class="flex justify-content-end my-3" style="width: 100%; border: none;">
-              <!-- <button class="flex align-items-center btnAddSection" (click)="addSection()">
-                <mat-icon class="mr-2">add_circle</mat-icon>
-                Agregar seccion
-              </button> -->
 
               <a class="flex align-items-center btnAddSectionV2" (click)="addSection()">
                 <mat-icon class="mr-2">add_circle</mat-icon>

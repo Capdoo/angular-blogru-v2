@@ -1,1 +1,45 @@
-<p>read works!</p>
+<div class="posts-container pb-5">
+  <div class="flex justify-content-center" style="width: 100%; border: none;">
+
+    <div class="align-items-center" style="width: 80%;">
+
+
+      <div class="mt-4" style="border: none; width: 100%;">
+
+        <button class="mt-4 btn-volver" (click)="volver()">Volver</button>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="mt-7 mb-7 flex justify-content-center" *ngIf="flagForm">
+
+    <div class="align-items-center" style="width: 80%; border: none;">
+
+
+      <div class="" style="border: none; width: 100%;">
+
+        <h1>{{post.title}}</h1>
+
+      </div>
+
+      <div class="mt-5" style="border: none; width: 100%;">
+
+        <p>{{post.summary}}</p>
+
+      </div>
+
+      <div class="mt-5" *ngFor="let section of post.listSectionsDto">
+        <h2>{{section.title}}</h2>
+
+        <div *ngFor="let paragraph of section.listParagraphsDto">
+          <p>{{paragraph.content}}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

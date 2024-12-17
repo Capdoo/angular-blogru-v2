@@ -35,7 +35,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.enInicio();
-    this.utilToolsService.Timer();
+    // this.utilToolsService.Timer();
   }
 
   enInicio(): void {

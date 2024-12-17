@@ -55,5 +55,11 @@ input {
   color: white;
 
   border-radius: 0px 5px 5px 0px;
+  transition: background-color 0.1s ease;
+  transition-delay: 0.1s;
 
+}
+
+.btn-email:hover {
+  background-color: var(--cf-color-secondary);
 }

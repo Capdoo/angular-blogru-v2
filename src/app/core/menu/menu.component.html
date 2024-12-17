@@ -1,37 +1,39 @@
-<!-- <mat-toolbar color="primary" class="mat-elevation-z6"> -->
-
 <mat-toolbar>
 
   <mat-toolbar-row class="flex justify-content-between">
-    <div class="flex">
-      <div class="" style="border: none;">
-        <span>
-          <!-- <mat-icon>book </mat-icon> -->
+    <div class="flex group-options">
+
+      <div class="flex align-items-center" style="border: none; cursor: pointer;">
+        <span class="" style="color: white;">
           Blog Application
         </span>
       </div>
 
-      <div class="full-list-options hidden lg:block" *ngIf="!smLimit" style="border: none">
-        <button class="" mat-button routerLink="home">Inicio</button>
-        <button class="" mat-button routerLink="feed">Posts</button>
-        <button class="" mat-button routerLink="aboutus">Temas</button>
-        <button class="" mat-button routerLink="aboutus">Sobre nosotros</button>
+      <div class="full-list-options hidden lg:block" *ngIf="!smLimit">
+        <button class="btnMenu" mat-button routerLink="home">Inicio</button>
+        <button class="btnMenu" mat-button routerLink="feed">Posts</button>
+        <button class="btnMenu" mat-button routerLink="topics">Temas</button>
+        <button class="btnMenu" mat-button routerLink="aboutus">Sobre nosotros</button>
       </div>
     </div>
 
     <div class="full-list-options hidden lg:block">
-      <button id="btn_login" class="btnLogin" *ngIf="!isLogged" mat-raised-button color="basic"
-        routerLink="auth/login">Iniciar Sesión</button>
-      <button *ngIf="!isLogged" mat-raised-button routerLink="auth/register">Registrarse</button>
-      <button class="btnLogout" *ngIf="isLogged" mat-raised-button color="accent" (click)="onLogOut()"
+      <button class="btnLogin" *ngIf="!isLogged" mat-button color="basic" routerLink="auth/login"
+        style="border: none;">
+        Iniciar Sesión
+      </button>
+      <button class="btnRegister" *ngIf="!isLogged" mat-button routerLink="auth/register">
+        Registrarse
+      </button>
+      <button class="btnLogout" *ngIf="isLogged" mat-button color="accent" (click)="onLogOut()"
         routerLink="logout">
         Cerrar Sesión
       </button>
     </div>
 
     <div class="block lg:hidden ml-auto" style="border: none;">
-      <button mat-button (click)="onSmallMenu()">
-        <mat-icon>menu</mat-icon>
+      <button class="btn-menu" mat-button (click)="onSmallMenu()">
+        <mat-icon class="icon-menu">menu</mat-icon>
       </button>
     </div>
   </mat-toolbar-row>
@@ -39,16 +41,16 @@
 
   <mat-toolbar-row class="secuRow block lg:hidden" *ngIf="isSmallMenu">
     <div>
-      <button mat-button routerLink="home">Inicio</button>
+      <button class="btnMenu" mat-button routerLink="home">Inicio</button>
     </div>
     <div>
-      <button mat-button routerLink="projects">Posts</button>
+      <button class="btnMenu" mat-button routerLink="feed">Posts</button>
     </div>
     <div>
-      <button mat-button routerLink="aboutus">Temas</button>
+      <button class="btnMenu" mat-button routerLink="topics">Temas</button>
     </div>
     <div>
-      <button mat-button routerLink="aboutus">Sobre nosotros</button>
+      <button class="btnMenu" mat-button routerLink="aboutus">Sobre nosotros</button>
     </div>
 
     <div class="group">

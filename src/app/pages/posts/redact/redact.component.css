@@ -2,14 +2,9 @@ h1 {
   font-size: 60px;
   color: #7f7f7f;
   line-height: 1.2;
-
 }
 
 mat-card {
-  /* margin: 1rem; */
-  /* margin: 2rem; */
-  /* margin: 40px; */
-  /* width: 80%; */
   border-radius: 15px;
 }
 
@@ -50,12 +45,18 @@ input {
 
   color: white;
 
-  /* color: var(--cf-color-primary) !important; */
+  transition: background-color 0.1s ease;
+  transition-delay: 0.1s;
 }
 
 .btnAddSection:not(:disabled):hover {
   border-color: var(--cf-color-secondary);
   background-color: var(--cf-color-secondary);
+}
+
+.btnAddSection:hover {
+  background-color: var(--cf-color-secondary);
+  border-color: var(--cf-color-secondary);
 }
 
 
@@ -71,11 +72,18 @@ input {
   text-decoration: none;
   padding-left: 5px;
   padding-right: 5px;
+  transition: background-color 0.1s ease;
+  transition-delay: 0.1s;
 }
 
 .btnAddSectionV2:not(:disabled):hover {
   border-color: var(--cf-color-secondary);
   background-color: var(--cf-color-secondary);
+}
+
+.btnAddSectionV2:hover {
+  background-color: var(--cf-color-secondary);
+  border-color: var(--cf-color-secondary);
 }
 
 .option-image {

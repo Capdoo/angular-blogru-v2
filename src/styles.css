@@ -8,21 +8,13 @@ body {
 }
 
 :root {
-  /* --cf-color-primary: #E56A54; */
-  /* --cf-color-primary: #0032fa; */
   --cf-color-primary: #009788;
-
-
   --cf-color-secondary: #03b3a1;
-
+  --cf-color-background: #f6f9ff;
+  /* --cf-color-background: #5a5a5a; */
   --cf-color-delete: #e04c4c;
-  /* --cf-color-delete: #e04c4c; */
-  --cf-color-delete-text: #e04c4c;
-
-
-  
   --cf-color-delete-secondary: #df1111;
-
+  --cf-color-delete-text: #e04c4c;
 }
 
 .mdc-list-item--with-leading-icon .mdc-list-item__start {

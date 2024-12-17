@@ -14,7 +14,7 @@ export class CategoriesService {
   constructor(private httpClient: HttpClient) { }
 
   public getAllSubtopics(): Observable<SubtopicDto[]> {
-    const url = `${this.url}/api/subtopics`;
+    const url = `${this.url}/api/subtopics/read`;
     return this.httpClient.get<SubtopicDto[]>(url);
   }
 

@@ -119,6 +119,9 @@ export class FeedComponent implements OnInit {
   }
 
   selectTopic(): void {
+    this.loadingSpinner = true;
+    this.flagPosts = false;
+    this.spinner.show('feed-spinner');
 
     let topicId = this.redactPostFormGroup.get('redactPostTopic').value;
     console.log(topicId);
@@ -126,13 +129,18 @@ export class FeedComponent implements OnInit {
     this.postService.getPostsByTopicId(topicId).subscribe(
       data => {
         this.listPosts = data;
+
+        this.flagPosts = true;
+        this.spinner.hide('feed-spinner');
+        this.loadingSpinner = false;
       },
       err => {
         this.utilToolsService.errNotif('Feed', 'Ocurrió un error');
         console.error(err);
+        this.spinner.hide('feed-spinner');
+        this.loadingSpinner = false;
       }
-    )
-
+    );
 
     this.utilToolsService.Timer();
     this.categoriesService.getCategoriesByTopic(topicId).subscribe(
@@ -160,19 +168,28 @@ export class FeedComponent implements OnInit {
   }
 
   selectSubTopic(): void {
+    this.loadingSpinner = true;
+    this.flagPosts = false;
+    this.spinner.show('feed-spinner');
+
     let subTopicId = this.redactPostFormGroup.get('redactPostCategory').value;
     console.log(subTopicId);
 
     this.postService.getPostsBySubTopicId(subTopicId).subscribe(
       data => {
         this.listPosts = data;
+
+        this.flagPosts = true;
+        this.spinner.hide('feed-spinner');
+        this.loadingSpinner = false;
       },
       err => {
         this.utilToolsService.errNotif('Feed', 'Ocurrió un error');
         console.error(err);
+        this.spinner.hide('feed-spinner');
+        this.loadingSpinner = false;
       }
-    )
+    );
   }
-
 
 }

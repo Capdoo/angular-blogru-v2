@@ -8,6 +8,9 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Route, Router } from '@angular/router';
 import { DataService } from '../../../shared/services/data.service';
 import { PreviewComponent } from '../components/preview/preview.component';
+import { ExportableDto } from '../interfaces/exportable-dto';
+import jsPDF from 'jspdf';
+import autoTable from 'jspdf-autotable';
 
 export interface PeriodicElement {
   name: string;
@@ -133,7 +136,7 @@ export class MyPostsComponent implements OnInit {
           data: this.postPreview,
           width: '90%'
         });
-    
+
         dialogRef.afterClosed().subscribe(result => {
           console.log(`Dialog result: ${result}`);
         });
@@ -168,6 +171,51 @@ export class MyPostsComponent implements OnInit {
         console.error(err);
       }
     )
+
+  }
+
+  downloadReport(): void {
+    console.log("Inicio descargar reporte!")
+    const source = this.listPostsDto;
+
+    let listaExporte: ExportableDto[] = [];
+
+    for (let data of this.listPostsDto) {
+      const single: ExportableDto = {} as ExportableDto;
+
+      single.id = data.id;
+      single.titulo = data.title;
+      single.topico = data.topicDto.description;
+      single.subtopico = data.subtopicDto.description;
+      single.autor = data.userDto.firstName +" "+ data.userDto.lastName;
+      single.register_date = data.register_date;
+
+      listaExporte.push(single);
+    }
+
+    const doc = new jsPDF();
+
+    // Título
+    doc.setFontSize(16);
+    doc.text('Reporte de Publicaciones', 14, 15);
+
+    // Encabezados y datos
+    const headers = [['ID', 'Título', 'Tópico', 'Subtópico', 'Autor','Fecha']];
+    const data = listaExporte.map(r => [r.id, r.titulo, r.topico, r.subtopico, r.autor, r.register_date]);
+
+    // Generar tabla
+    autoTable(doc, {
+      head: headers,
+      body: data,
+      startY: 25,
+      theme: 'grid',
+      styles: { fontSize: 10 },
+      headStyles: { fillColor: [41, 128, 185] },
+    });
+
+    // Guardar el archivo
+    doc.save('ReportePublicaciones.pdf');
+
 
   }
 

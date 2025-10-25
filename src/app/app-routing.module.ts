@@ -5,6 +5,7 @@ import { LoginGuard } from './guard/login.guard';
 import { HomeComponent } from './pages/home/home/home.component';
 import { ManageComponent } from './layouts/manage/manage.component';
 import { DashboardComponent } from './pages/dashboard/dashboard/dashboard.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 const routes: Routes = [
   {
@@ -63,6 +64,8 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }]
+
 })
 export class AppRoutingModule { }

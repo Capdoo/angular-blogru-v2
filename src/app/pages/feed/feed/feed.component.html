@@ -29,7 +29,7 @@
               <mat-select formControlName="redactPostTopic" [errorStateMatcher]="matcher"
                 (selectionChange)="selectTopic()">
                 <mat-option *ngFor="let item of listTopics" [value]="item.id">
-                  <img [src]="item.description" alt="img-i" class="option-image" />
+                  <img [src]="item.image" alt="img-i" class="option-image" />
                   {{item.name}}
                 </mat-option>
               </mat-select>
@@ -41,7 +41,7 @@
               <mat-select formControlName="redactPostCategory" [errorStateMatcher]="matcher"
               (selectionChange)="selectSubTopic()">
                 <mat-option *ngFor="let item of listSubtopics" [value]="item.id">
-                  <img [src]="item.description" alt="img-i" class="option-image" />
+                  <img [src]="item.image" alt="img-i" class="option-image" />
                   {{item.name}}
                 </mat-option>
               </mat-select>

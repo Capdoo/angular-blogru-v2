@@ -17,6 +17,18 @@
 </div>
 
 <div *ngIf="flagPosts" class="mt-4 my-pets-container flex justify-content-center" style="border: none;">
+  <div class="flex contenido align-items-center justify-content-start"  style="border: none; width: 95%; height: auto; ">
+    <div>
+      <button class="flex align-items-center btnAddParagraph" (click)="downloadReport()">
+        <mat-icon class="mr-2">picture_as_pdf</mat-icon>
+        Descargar reporte
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="flagPosts" class="mt-4 my-pets-container flex justify-content-center" style="border: none;">
 
   <div class="contenido align-items-center" style="border: none; width: 95%; height: auto; ">
 
@@ -71,7 +83,8 @@
               edit
             </mat-icon>
           </button>
-        </td>      </ng-container>
+        </td>
+      </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

@@ -35,6 +35,7 @@ export interface ParagraphDto {
 export interface TopicDto {
   id:          string;
   name:        string;
+  image:        string;
   description: string;
   listSubtopicsDto: SubtopicDto[];
 }
@@ -42,6 +43,7 @@ export interface TopicDto {
 export interface SubtopicDto {
   id:          string;
   name:        string;
+  image:        string;
   description: string;
 }
 

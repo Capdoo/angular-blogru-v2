@@ -1,57 +1,39 @@
 <mat-toolbar color="primary">
-
   <mat-toolbar-row>
-
     <div class="flex">
-
       <div class="block lg:hidden" style="border: none;">
         <button mat-button (click)="onSmallMenu()">
           <mat-icon>menu</mat-icon>
         </button>
       </div>
-
       <div class="flex align-items-center" style="border: none;">
-
         <span>
           Blogru Dashboard
         </span>
       </div>
-
-
     </div>
-
     <div class="full-list-options hidden lg:block" *ngIf="!smLimit" style="border: none;">
-
-      <button class="btnLogout" *ngIf="isLogged" mat-raised-button color="accent" (click)="onLogOut()"
-        >
+      <button class="btnLogout" *ngIf="isLogged" mat-raised-button color="accent" (click)="onLogOut()">
         Cerrar Sesión
       </button>
     </div>
-
   </mat-toolbar-row>
-
-
   <mat-toolbar-row class="secuRow block lg:hidden" *ngIf="isSmallMenu">
     <div>
       <button mat-button routerLink="home">Inicio</button>
     </div>
-
-
     <div>
       <!-- <button *ngIf="isLogged" mat-button routerLink="projects">Búsquedas</button> -->
       <button mat-button routerLink="projects">Búsquedas</button>
     </div>
-
     <div>
       <!-- <button *ngIf="isLogged" mat-button routerLink="aboutus">Adopciones</button> -->
       <button mat-button routerLink="aboutus">Adopciones</button>
     </div>
-
     <div>
       <!-- <button *ngIf="isLogged" mat-button routerLink="aboutus">Albergues</button> -->
       <button mat-button routerLink="aboutus">Albergues</button>
     </div>
-
     <div class="group">
       <button class="" style="margin-right: 15px;" *ngIf="!isLogged" mat-raised-button color="basic"
         routerLink="auth/login">
@@ -66,5 +48,4 @@
       </button>
     </div>
   </mat-toolbar-row>
-
 </mat-toolbar>

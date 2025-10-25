@@ -81,7 +81,7 @@ export class FeedComponent implements OnInit {
         this.listTopics = data;
 
         this.listTopics = this.listTopics.map((e) => {
-          e.description = `assets/${e.description}.png`
+          e.image = `assets/${e.image}.png`
           return e;
         })
 
@@ -148,7 +148,7 @@ export class FeedComponent implements OnInit {
         this.listSubtopics = data;
 
         this.listSubtopics = this.listSubtopics.map((e) => {
-          e.description = `assets/${e.description}.png`
+          e.image = `assets/${e.image}.png`
           return e;
         })
 

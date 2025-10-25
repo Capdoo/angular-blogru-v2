@@ -31,3 +31,24 @@ table {
   margin-right: 25px;
   border-radius: 15px;
 }
+
+
+.btnAddParagraph {
+  height: 35px;
+  /* width: 200px; */
+
+  border-radius: 10px;
+  border-color: var(--cf-color-primary);
+  /* background-color: var(--cf-color-primary); */
+  border: 1px;
+
+  color: var(--cf-color-primary);
+
+  /* color: var(--cf-color-primary) !important; */
+}
+
+.btnAddParagraph:hover {
+  color: white;
+  border-color: var(--cf-color-secondary);
+  background-color: var(--cf-color-secondary);
+}
